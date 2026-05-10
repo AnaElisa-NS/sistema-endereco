@@ -1,0 +1,79 @@
+﻿@model List<ProjetoEndereco.Models.Endereco>
+
+@{
+    ViewData["Title"] = "Endereços";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between mb-3">
+
+    <h2>Meus Endereços</h2>
+
+    <div>
+
+        <a asp-controller="Endereco"
+           asp-action="ExportarCsv"
+           class="btn btn-success">
+            Exportar CSV
+        </a>
+
+        <a asp-controller="Endereco"
+           asp-action="Create"
+           class="btn btn-primary">
+            Novo Endereço
+        </a>
+
+    </div>
+
+</div>
+
+    <table class="table table-bordered table-striped">
+
+        <thead>
+            <tr>
+                <th>CEP</th>
+                <th>Logradouro</th>
+                <th>Número</th>
+                <th>Bairro</th>
+                <th>Cidade</th>
+                <th>UF</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Cep</td>
+                    <td>@item.Logradouro</td>
+                    <td>@item.Numero</td>
+                    <td>@item.Bairro</td>
+                    <td>@item.Cidade</td>
+                    <td>@item.Uf</td>
+                    <td>
+
+    <a asp-action="Edit"
+       asp-route-id="@item.Id"
+       class="btn btn-warning btn-sm">
+        Editar
+    </a>
+
+    <a asp-action="Delete"
+       asp-route-id="@item.Id"
+       class="btn btn-danger btn-sm"
+       onclick="return confirm('Deseja realmente excluir?')">
+        Excluir
+    </a>
+
+</td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+</div>

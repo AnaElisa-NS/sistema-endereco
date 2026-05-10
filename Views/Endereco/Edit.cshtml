@@ -1,0 +1,91 @@
+﻿@model ProjetoEndereco.Models.Endereco
+
+@{
+    ViewData["Title"] = "Editar Endereço";
+}
+
+<div class="container mt-4">
+
+    <h2>Editar Endereço</h2>
+
+    <form asp-action="Edit" method="post">
+
+        <input type="hidden" asp-for="Id" />
+
+        <input type="hidden" asp-for="UsuarioId" />
+
+        <div class="row">
+
+            <div class="col-md-3 mb-3">
+                <label>CEP</label>
+
+                <input asp-for="Cep"
+                       class="form-control"
+                       id="cep" />
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <label>Número</label>
+
+                <input asp-for="Numero"
+                       class="form-control" />
+            </div>
+
+        </div>
+
+        <div class="mb-3">
+            <label>Logradouro</label>
+
+            <input asp-for="Logradouro"
+                   class="form-control"
+                   id="logradouro" />
+        </div>
+
+        <div class="mb-3">
+            <label>Complemento</label>
+
+            <input asp-for="Complemento"
+                   class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Bairro</label>
+
+            <input asp-for="Bairro"
+                   class="form-control"
+                   id="bairro" />
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+                <label>Cidade</label>
+
+                <input asp-for="Cidade"
+                       class="form-control"
+                       id="cidade" />
+            </div>
+
+            <div class="col-md-2 mb-3">
+                <label>UF</label>
+
+                <input asp-for="Uf"
+                       class="form-control"
+                       id="uf" />
+            </div>
+
+        </div>
+
+        <button type="submit"
+                class="btn btn-success">
+            Salvar Alterações
+        </button>
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+            Voltar
+        </a>
+
+    </form>
+
+</div>

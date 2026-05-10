@@ -1,0 +1,25 @@
+CREATE TABLE Usuarios
+(
+    Id INT PRIMARY KEY IDENTITY,
+    Nome NVARCHAR(100) NOT NULL,
+    Usuario NVARCHAR(50) NOT NULL UNIQUE,
+    Senha NVARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Enderecos
+(
+    Id INT PRIMARY KEY IDENTITY,
+    Cep NVARCHAR(20) NOT NULL,
+    Logradouro NVARCHAR(200) NOT NULL,
+    Complemento NVARCHAR(200) NULL,
+    Bairro NVARCHAR(100) NOT NULL,
+    Cidade NVARCHAR(100) NOT NULL,
+    Uf NVARCHAR(2) NOT NULL,
+    Numero NVARCHAR(20) NOT NULL,
+
+    UsuarioId INT NOT NULL,
+
+    CONSTRAINT FK_Enderecos_Usuarios
+    FOREIGN KEY (UsuarioId)
+    REFERENCES Usuarios(Id)
+);
