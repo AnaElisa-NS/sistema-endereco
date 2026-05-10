@@ -1,3 +1,5 @@
+-- Script de criação das tabelas
+
 CREATE TABLE Usuarios
 (
     Id INT PRIMARY KEY IDENTITY,
