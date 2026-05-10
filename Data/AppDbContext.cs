@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿// Configuração do banco
+
+using Microsoft.EntityFrameworkCore;
 using ProjetoEndereco.Models;
 
 namespace ProjetoEndereco.Data
