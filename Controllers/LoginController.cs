@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿// Controle de autenticação
+
+using Microsoft.AspNetCore.Mvc;
 using ProjetoEndereco.Data;
 using ProjetoEndereco.Models;
 
